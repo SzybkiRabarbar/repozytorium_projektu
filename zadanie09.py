@@ -101,3 +101,4 @@ print('Najdłusza domena:',najdlusza_i_najkrotsza()[1], "ma",najdlusza_i_najkrot
 print('Najkrótsza domena:',najdlusza_i_najkrotsza()[3], "ma",najdlusza_i_najkrotsza()[2],'znaków')
 print()
 print('Czas wykonania skrytu:', datetime.now() - startTime)
+print('aaaaaaaaaaaaaaa')
