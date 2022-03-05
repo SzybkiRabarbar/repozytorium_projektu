@@ -39,7 +39,6 @@ if __name__ == '__main__':
     lista_flag = stworz_liste_flag(argument)
     #print(lista_flag)
 '''
-#print(stworz_liste_flag(link_flagi))
 
 def ile_pl(): ### funkcja 1 
     lista_z_pl = []
