@@ -71,19 +71,23 @@ def ile_a(): ### funkcja 3
             wynik += 1
     return wynik
 
+#linkaaa = stworz_liste_flag(link_flagi)
+
 def najdlusza_i_najkrotsza(): ### funkcja 4
     liczba_najdlusza = 0 
     for ld in stworz_liste_flag(link_flagi):
         if len(ld) > liczba_najdlusza:
             liczba_najdlusza = len(ld)
             domena_najdlusza = ld
-    
+        elif len(ld) == liczba_najdlusza:
+            domena_najdlusza = domena_najdlusza +' i '+ ld
     liczba_najkrotsza = liczba_najdlusza
     for lk in stworz_liste_flag(link_flagi):
         if len(lk) < liczba_najkrotsza:
             liczba_najkrotsza = len(lk)
             domena_najkrotsza = lk
-
+        elif len(lk) == liczba_najkrotsza:
+            domena_najkrotsza = domena_najkrotsza +' i '+lk
     zwrot = [liczba_najdlusza, domena_najdlusza, liczba_najkrotsza, domena_najkrotsza]
     return zwrot
 
@@ -101,4 +105,4 @@ print('Najdłusza domena:',najdlusza_i_najkrotsza()[1], "ma",najdlusza_i_najkrot
 print('Najkrótsza domena:',najdlusza_i_najkrotsza()[3], "ma",najdlusza_i_najkrotsza()[2],'znaków')
 print()
 print('Czas wykonania skrytu:', datetime.now() - startTime)
-print('aaaaaaaaaaaaaaa')
+#print(linkaaa)
