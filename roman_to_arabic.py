@@ -16,4 +16,4 @@ if __name__ == '__main__':
     if is_valid:
         print(roman_number.upper(),'jest równe',is_valid)
     else:
-        print('Źle wprowadzone dane')
+        print('Źle wprowadzone dane!')
