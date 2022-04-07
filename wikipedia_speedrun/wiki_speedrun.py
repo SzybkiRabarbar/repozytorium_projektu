@@ -1,14 +1,13 @@
 import requests
 from mediawiki import MediaWiki
-wiki = MediaWiki()
 
+wiki = MediaWiki()
 seen = []
 
 def inputs():
     starting_url = wiki.opensearch(input("Start:"), results=1)
     destination_url = wiki.opensearch(input("Destination:"), results=1)
     return [starting_url[-1][-1], destination_url[-1][-1]]
-
 
 def url_list(url):
     starting_content = requests.get(url).text
@@ -19,18 +18,15 @@ def url_list(url):
     global seen
     for link in raw_links:
         link = link.split('"')[0]
-        if link.startswith('/wiki/'):
-            if link in seen: continue
+        if link.startswith('/wiki/') and not (link.endswith('.jpg') or link.endswith('.png')):
             seen.append(link)
             links.append('https://en.wikipedia.org'+link)
     return links
-
 
 def func_name(input_lst):
     
     url_lst=url_list(input_lst[0])
     iterator = url_lst[:]
-    print('(1)',)
     for link in iterator:
         if url_lst==iterator: url_lst.clear()
         if link==input_lst[1]: return link
@@ -43,7 +39,7 @@ def func_name(input_lst):
         for link_lst in iterator:
             if link_lst[-1]==input_lst[1]: return link_lst
         for link_lst in iterator:
-            print('('+str(n)+')')
+            print(link_lst)
             try:
                 if url_lst==iterator: url_lst.clear()
                 for link in url_list(link_lst[-1]):
@@ -58,9 +54,12 @@ def func_name(input_lst):
 if __name__ == '__main__':
     inp = inputs()
     func = func_name(inp)
-    print(inp[0],' --> '+' --> '.join([f for f in func]))
-    print(len(seen))
-    
+    print("Quickest path:")
+    if type(func)==str:
+        print(inp[0],' >>> ',func)
+    else:
+        print(inp[0]+' >>> '+' >>> '.join(func))
+    print(len(seen),'links was scrapted')
 
 
 
