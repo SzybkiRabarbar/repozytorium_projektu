@@ -1,4 +1,4 @@
-from classes.Roman_Numerals_Helper import RomanNumerals
+from Roman_Numerals_Helper import RomanNumerals
 
 def is_roman_valid(roman_number:str):
     if not type(roman_number)==str: return False
