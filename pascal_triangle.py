@@ -8,7 +8,7 @@ def generate_pascal_triangle(layers:int)->list:
     return triangle
 
 if __name__=='__main__':
-    layers = 31
+    layers = 20
     pascal_triangle = generate_pascal_triangle(layers)
     for l in pascal_triangle:
         print(f"{' '*(layers)}{l}")
