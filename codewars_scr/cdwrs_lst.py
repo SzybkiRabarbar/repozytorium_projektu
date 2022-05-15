@@ -4,7 +4,7 @@ lst = ['5', '5', '6', '5', '6', '6', '6', '6', '6', '6', '8', '8', '7', '8', '8'
        '4', '6', '6', '5', '5', '6', '6', '6', '6', '7', '7', '6', '6', '8']
 
 def level_count(lst:list)->dict:
-    return {x: lst.count(x) for x in set(lst)}
+    return {x: lst.count(x) for x in sorted(set(lst))}
 
 if __name__=='__main__':
     print(f"Ilość rozwiązań z rankigiem: {len(lst)}")
