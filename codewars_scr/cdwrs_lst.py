@@ -6,6 +6,13 @@ lst = ['5', '5', '6', '5', '6', '6', '6', '6', '6', '6', '8', '8', '7', '8', '8'
 def level_count(lst:list)->dict:
     return {x: lst.count(x) for x in sorted(set(lst))}
 
+def print_lvl(lvl:dict):
+    summ = sum(lvl.values())
+    print(f"Ilość ocen: {summ}")
+    print("Poziom|Ilość|Procent")
+    for key, value in lvl.items():
+        content = f" {key}{' '*(5-len(str(key)))}| {value}{' '*(4-len(str(value)))}| {round((value/summ)*100)}%"
+        print(content)
+
 if __name__=='__main__':
-    print(f"Ilość rozwiązań z rankigiem: {len(lst)}")
-    print(level_count(lst))
+    print_lvl(level_count(lst))
