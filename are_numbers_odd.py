@@ -15,10 +15,10 @@ def check_input(*numbers):
         elif type(number)==list and all([True if type(n)==int else False for n in number]):
             content.append(are_numbers_odd(number))
         else:
-            return 'Bad input! Input must be integer or list of integers'
+            raise Exception('Bad input! Input must be integer or list of integers')
     return content
 
 if __name__=='__main__':
-    print(check_input([5,2,2,1,3,4,5],2,3))
+    print(check_input([5,2,2,1,3,4,5],2,3,'a'))
     
 
